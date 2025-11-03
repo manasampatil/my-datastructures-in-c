@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    int n = 1000000;  
+    long long sum = 0;
+    clock_t start, end;
+
+    start = clock(); 
+    for(int i = 1; i <= n; i++) {
+        sum += i;  // Single loop → O(n)
+    }
+    end = clock();  
+
+    printf("Sum = %lld\n", sum);
+    printf("Time taken: %lf seconds\n", (double)(end - start) / CLOCKS_PER_SEC);
+
+    return 0;
+}

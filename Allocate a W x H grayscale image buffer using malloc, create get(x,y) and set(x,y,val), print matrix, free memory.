@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+unsigned char** alloc_image(int width, int height) {
+    unsigned char **img = malloc(height * sizeof(unsigned char *));
+    if (!img) {
+        perror("malloc failed");
+        return NULL;
+    }
+
+    for (int y = 0; y < height; y++) {
+        img[y] = malloc(width * sizeof(unsigned char));
+        if (!img[y]) {
+            perror("malloc failed");
+            // Free any rows allocated so far
+            for (int i = 0; i < y; i++)
+                free(img[i]);
+            free(img);
+            return NULL;
+        }
+    }
+    return img;
+}
+
+void set_pixel(unsigned char **img, int x, int y, unsigned char val) {
+    img[y][x] = val;
+}
+
+unsigned char get_pixel(unsigned char **img, int x, int y) {
+    return img[y][x];
+}
+
+void print_image(unsigned char **img, int width, int height) {
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            printf("%3d ", img[y][x]);
+        }
+        printf("\n");
+    }
+}
+void free_image(unsigned char **img, int height) {
+    for (int y = 0; y < height; y++)
+        free(img[y]);
+    free(img);
+}
+int main(void) {
+    int W = 5, H = 4;
+    unsigned char **image = alloc_image(W, H);
+    if (!image) return 1;
+    for (int y = 0; y < H; y++)
+        for (int x = 0; x < W; x++)
+            set_pixel(image, x, y, (unsigned char)(x + y * 10));
+    printf("Grayscale Image (%dx%d):\n", W, H);
+    print_image(image, W, H);
+    printf("\nPixel at (2,1) = %d\n", get_pixel(image, 2, 1));
+    free_image(image, H);
+    return 0;
+}

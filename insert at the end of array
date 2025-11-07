@@ -1,4 +1,5 @@
-//insert at end of the array
+4.insert at end in array
+
 #include<stdio.h>
 #define CAP 10
 int main()

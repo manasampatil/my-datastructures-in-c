@@ -1,3 +1,5 @@
+Allocate an R x C matrix using a single malloc, input elements, and print its transpose. If non-square, allocate new memory.
+
 #include <stdio.h>
 #include <stdlib.h>
 int main() {

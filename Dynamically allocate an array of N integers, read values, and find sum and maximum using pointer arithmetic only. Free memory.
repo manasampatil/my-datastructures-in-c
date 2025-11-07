@@ -1,3 +1,6 @@
+Dynamically allocate an array of N integers, read values, and find sum and maximum using pointer arithmetic only. Free memory.
+
+
 #include <stdio.h>
 #include <stdlib.h>
 int main() {

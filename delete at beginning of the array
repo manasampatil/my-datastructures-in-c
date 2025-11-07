@@ -1,4 +1,5 @@
-//delete at beginning
+8.delete at beginning in array
+
 #include<stdio.h>
 #define CAP 50
 int main()

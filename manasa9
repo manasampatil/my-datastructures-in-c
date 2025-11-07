@@ -1,0 +1,47 @@
+7.delete at end in array 
+ 
+#include<stdio.h> 
+#define CAP 50 
+int main() 
+{    
+    printf("Manasa.Patil\n"); 
+    printf("1SV24CS067\n"); 
+    int a[]={1,2,3,4}; 
+    int n=4; 
+    if(n>0) 
+    { 
+        n--;    
+        for(int i=0;i<n;i++) 
+          printf("%d ",a[i]); 
+    } 
+    else 
+    { 
+        printf("array is empty"); 
+    } 
+} 
+
+8.delete at beginning in array 
+ 
+#include<stdio.h> 
+#define CAP 50 
+int main() 
+{     
+    printf("Manasa.Patil\n"); 
+    printf("USN : 1SV24CS067\n"); 
+    int a[CAP]={10,20,30,40}; 
+    int n=4; 
+    if(n>0){ 
+        for(int i=0;i<n;i++){ 
+            a[i]=a[i+1]; 
+        } 
+        n--;     
+    } 
+    else 
+    { 
+        printf("array is empty"); 
+    } 
+    for(int i=0;i<n;i++) 
+    printf("%d ",a[i]); 
+} 
+
+

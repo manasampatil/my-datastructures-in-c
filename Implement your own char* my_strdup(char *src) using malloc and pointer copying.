@@ -1,3 +1,5 @@
+Implement your own char* my_strdup(char *src) using malloc and pointer copying.
+
 #include <stdio.h>
 #include <stdlib.h>
 char* my_strdup(char *src) {

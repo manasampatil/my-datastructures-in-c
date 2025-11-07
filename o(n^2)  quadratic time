@@ -1,6 +1,8 @@
+TIME COMPLEXITY(QUADRATIC)
+
+
 #include <stdio.h>
 #include <time.h>
-
 int main() {
     int n = 1000;  
     long long sum = 0;

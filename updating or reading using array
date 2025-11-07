@@ -1,4 +1,5 @@
-//updating or writing
+3.Write or update(array)
+
 #include<stdio.h>
 int main()
 {

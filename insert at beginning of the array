@@ -1,4 +1,5 @@
-//insert at beginning
+5.insert at beginning in array
+
 #include<stdio.h>
 #define CAP 10
 int main()
